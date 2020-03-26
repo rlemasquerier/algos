@@ -3,8 +3,13 @@
 # * Use: echo or print to output your result to STDOUT, use the /n constant at the end of each result line.
 # * Use: sys.stderr.write() to display debugging information to STDERR
 # * ***/
-import sys
 
+import sys
+import os
+
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
 
 if __name__ == "__main__":
     file = open('./input/data.txt', 'r')
