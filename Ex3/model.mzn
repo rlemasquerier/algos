@@ -12,7 +12,7 @@ array[SLOTS] of DURATION: array_duration;
 var TIME: time_meeting;
 
 include "disjunctive.mzn";
-constraint disjunctive(array_meeting++[time_meeting], array_duration++[duration_meeting]);
+constraint forall(i in SLOTS)(disjunctive([array_meeting[i]]++[time_meeting], [array_meeting[i]]++[duration_meeting]));
 solve satisfy;
 
 
